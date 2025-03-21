@@ -1,0 +1,6 @@
+@SelepassBack_HostAddress = http://localhost:5147
+
+GET {{SelepassBack_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
