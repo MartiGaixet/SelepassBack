@@ -9,6 +9,7 @@ namespace SelepassBack.Models
         public String Email { get; set; }
         public String Password { get; set; }
         public bool Suscrito { get; set; }
+        public String ComunidadAutonoma { get; set; }
         public float Nota_Academica { get; set; }
         public float? Nota_fase_general { get; set; }
         public float Nota_fase_especifica { get; set; }

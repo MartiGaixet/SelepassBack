@@ -6,6 +6,8 @@ namespace SelepassBack.Models
 {
     public class Context : DbContext
     {
+
+        public DbSet<Asignatura> Asignaturas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Apuntes> Apuntes { get; set; }
         public DbSet<Examen> Examenes { get; set; }

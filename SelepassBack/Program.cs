@@ -16,9 +16,10 @@ namespace SelepassBack
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var connectionString = "Server=localhost;Database=selepass;User=selepass_user;Password=selepass;";
+            var connectionString = "Server=localhost,1433;Database=selepass;User Id=sa;Password=Selepass69!;TrustServerCertificate=True;";
             builder.Services.AddDbContext<Context>(options =>
-                options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 29))));
+                options.UseSqlServer(connectionString));
+
 
             builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             builder.Services.AddScoped<IUsuarioService, UsuarioService>();
@@ -26,7 +27,8 @@ namespace SelepassBack
             builder.Services.AddScoped<IExamenService, ExamenService>();
             builder.Services.AddScoped<IApuntesRepository, ApuntesRepository>();
             builder.Services.AddScoped<IApuntesService, ApuntesService>();
-
+            builder.Services.AddScoped<IAsignaturaRepository, AsignaturaRepository>();
+            builder.Services.AddScoped<IAsignaturaService, AsignaturaService>();
 
             builder.Services.AddControllers()
                 .AddJsonOptions(options =>
